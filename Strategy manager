@@ -1,0 +1,13 @@
+pragma solidity ^0.8.20;
+
+contract StrategyManager {
+    address[] public strategies;
+
+    function addStrategy(address strat) external {
+        strategies.push(strat);
+    }
+
+    function getStrategies() external view returns (address[] memory) {
+        return strategies;
+    }
+}
