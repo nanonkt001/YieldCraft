@@ -1,0 +1,13 @@
+pragma solidity ^0.8.20;
+
+contract YieldCraftVault {
+    mapping(address => uint256) public deposits;
+
+    function deposit() external payable {
+        deposits[msg.sender] += msg.value;
+    }
+
+    function simulateInvest() external view returns (uint256) {
+        return address(this).balance * 110 / 100; // +10% yield
+    }
+}
